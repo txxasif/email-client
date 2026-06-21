@@ -1184,6 +1184,7 @@ export default function App() {
                     value={settingsSyncInterval}
                     onChange={(val) => setSettingsSyncInterval(val)}
                     options={[
+                      { value: 5, label: "5 Seconds" },
                       { value: 15, label: "15 Seconds" },
                       { value: 30, label: "30 Seconds" },
                       { value: 60, label: "1 Minute" },
