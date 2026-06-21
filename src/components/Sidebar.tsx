@@ -10,7 +10,6 @@ import {
   Plus,
   FileText,
   ShieldAlert,
-  Settings,
 } from "lucide-react";
 import { Account } from "../types";
 
@@ -22,7 +21,6 @@ interface SidebarProps {
   setSelectedMessage: (msg: any) => void;
   activeAccount: Account | null;
   onComposeClick: () => void;
-  onOpenSettings: () => void;
 }
 
 const Sidebar = React.memo(function Sidebar({
@@ -33,7 +31,6 @@ const Sidebar = React.memo(function Sidebar({
   setSelectedMessage,
   activeAccount,
   onComposeClick,
-  onOpenSettings,
 }: SidebarProps) {
   const folders = [
     { id: "INBOX", name: "Inbox", icon: Inbox },
@@ -112,33 +109,6 @@ const Sidebar = React.memo(function Sidebar({
             );
           })}
         </nav>
-      </div>
-
-      {/* Footer / Settings Section */}
-      <div className="mt-auto border-t border-black/5 dark:border-white/5 flex flex-col">
-        <button
-          onClick={onOpenSettings}
-          className={`flex items-center gap-3 px-5 py-3.5 text-xs font-medium text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-200 ${
-            isSidebarCollapsed ? "justify-center" : ""
-          }`}
-          title="Settings"
-        >
-          <Settings size={16} className="shrink-0" />
-          {!isSidebarCollapsed && <span>Settings</span>}
-        </button>
-
-        {!isSidebarCollapsed && (
-          <div className="px-5 pb-4 flex flex-col space-y-1 text-[11px] text-neutral-400 dark:text-neutral-500">
-            <div className="flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span>Connected</span>
-            </div>
-            <div className="font-mono text-[9px] uppercase tracking-wider">shortcuts enabled</div>
-          </div>
-        )}
       </div>
     </div>
   );

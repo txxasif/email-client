@@ -978,7 +978,6 @@ export default function App() {
             setIsComposeOpen(true);
             setIsComposeMinimized(false);
           }}
-          onOpenSettings={() => setIsSettingsOpen(true)}
         />
 
         <div className="flex-1 h-full flex overflow-hidden">
